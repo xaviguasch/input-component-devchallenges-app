@@ -1,5 +1,4 @@
 .main-input {
-  background: green;
 }
 
 .main-input input {
@@ -8,4 +7,12 @@
 
 .main-input.error input {
   border: 2px solid red;
+}
+
+.main-input.error label {
+  color: red;
+}
+
+.main-input label {
+  display: block;
 }

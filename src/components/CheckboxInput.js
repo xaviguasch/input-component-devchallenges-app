@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const CheckboxInput = (props) => {
   const [checkboxValue, setcheckboxValue] = useState(false)
 
   const submitHandler = (e) => {
     setcheckboxValue((prevState) => !prevState)
-
-    props.getCheckboxInfo(checkboxValue)
   }
 
+  // Applying useEffect in order to send an updated version of the state
+  useEffect(() => {
+    props.getCheckboxInfo(checkboxValue)
+  }, [checkboxValue])
+
   return (
-    <div>
-      <label htmlFor='checkbox'>{props.children}</label>
+    <div className='checkbox-input'>
       <input type='checkbox' name='' id='checkbox' onChange={submitHandler} />
-      {checkboxValue ? 'true' : 'false'}
+      <label htmlFor='checkbox'>{props.children}</label>
     </div>
   )
 }
