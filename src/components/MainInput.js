@@ -7,6 +7,7 @@ const MainInput = (props) => {
     <div className={`main-input ${props.error ? 'error' : ''}`}>
       <label htmlFor=''>{props.label}</label>
       <input type='text' />
+      {props.helperMessage ? 'Some interesting text' : ''}
     </div>
   )
 }
