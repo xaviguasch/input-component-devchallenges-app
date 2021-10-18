@@ -8,14 +8,16 @@ import './App.css'
 function App() {
   const [error, setError] = useState(false)
 
-  const checkboxDisableHandler = (checkboxValue) => {
-    setError(checkboxValue)
+  const handleErrorChangeOne = (checkboxValue) => {
+    setError((prevState) => !prevState)
   }
 
   return (
     <div className='app'>
       <MainInput error={error} label='Label' />
-      <CheckboxInput getCheckboxInfo={checkboxDisableHandler}>Disable</CheckboxInput>
+      <CheckboxInput label='error-checkbox' value={error} onChange={handleErrorChangeOne}>
+        Disable
+      </CheckboxInput>
     </div>
   )
 }
