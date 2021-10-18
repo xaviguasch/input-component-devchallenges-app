@@ -1,0 +1,11 @@
+.main-input {
+  background: green;
+}
+
+.main-input input {
+  border: 2px solid blue;
+}
+
+.main-input.error input {
+  border: 2px solid red;
+}
