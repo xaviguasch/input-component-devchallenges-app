@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './CheckboxInput.css'
+
 const CheckboxInput = ({ label, value, onChange, children }) => {
   return (
     <div className='checkbox-input'>

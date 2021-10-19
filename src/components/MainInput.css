@@ -13,6 +13,10 @@
   color: red;
 }
 
+.main-input.error .additional-text {
+  color: red;
+}
+
 .main-input label {
   display: block;
 }

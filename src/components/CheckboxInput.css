@@ -1,2 +1,3 @@
-.checkbox-input {
+.checkbox-input input {
+  cursor: pointer;
 }
