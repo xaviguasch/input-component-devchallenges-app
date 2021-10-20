@@ -6,7 +6,9 @@ const CheckboxInput = ({ label, value, onChange, children }) => {
   return (
     <div className='checkbox-input'>
       <input type='checkbox' name='' id={label} checked={value} onChange={onChange} />
-      <label htmlFor={label}>{children}</label>
+      <label className='item-label' htmlFor={label}>
+        {children}
+      </label>
     </div>
   )
 }

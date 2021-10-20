@@ -54,6 +54,7 @@ function App() {
           label='Label'
           color={color}
           disable={disabled}
+          size={sizeOption}
         />
 
         <div className='group'>
