@@ -4,6 +4,7 @@ import MainInput from './components/MainInput'
 import CheckboxInput from './components/CheckboxInput'
 import Dropdown from './components/Dropdown'
 import IconPicker from './components/IconPicker'
+import ColorPickerInput from './components/ColorPickerInput'
 
 import './App.css'
 
@@ -14,6 +15,7 @@ function App() {
   const [sizeOption, setSize] = useState('small')
   const [iconLeft, setIconLeft] = useState([])
   const [iconRight, setIconRight] = useState([])
+  const [color, setColor] = useState('#ffffff')
 
   const handleErrorChange = (checkboxValue) => {
     setError((prevState) => !prevState)
@@ -36,33 +38,48 @@ function App() {
     setIconRight(icon)
   }
 
+  const handleColorPicker = (color) => {
+    setColor(color)
+  }
+
   return (
     <div className='App'>
       <div className='wrapper'>
+        <h1 className='title'>Input Component</h1>
         <MainInput
           error={error}
           helperMessage={helperText}
           iconLeft={iconLeft}
           iconRight={iconRight}
           label='Label'
+          color={color}
+          disable={disabled}
         />
-        <CheckboxInput label='error-checkbox' value={error} onChange={handleErrorChange}>
-          Error state
-        </CheckboxInput>
-        <CheckboxInput
-          label='helper-text-checkbox'
-          value={helperText}
-          onChange={handleHelperText}
-        >
-          Helper text
-        </CheckboxInput>
-        <CheckboxInput
-          label='disable-checkbox'
-          value={disabled}
-          onChange={handleDisableText}
-        >
-          Disable option
-        </CheckboxInput>
+
+        <div className='group'>
+          <CheckboxInput
+            label='error-checkbox'
+            value={error}
+            onChange={handleErrorChange}
+          >
+            Error state
+          </CheckboxInput>
+          <CheckboxInput
+            label='helper-text-checkbox'
+            value={helperText}
+            onChange={handleHelperText}
+          >
+            Helper text
+          </CheckboxInput>
+          <CheckboxInput
+            label='disable-checkbox'
+            value={disabled}
+            onChange={handleDisableText}
+          >
+            Disable option
+          </CheckboxInput>
+        </div>
+
         <Dropdown
           getOptionPicked={changeOption}
           options={['small', 'medium', 'full-width']}
@@ -71,6 +88,8 @@ function App() {
         />
 
         <IconPicker getIconLeft={addIconLeft} getIconRight={addIconRight} />
+
+        <ColorPickerInput getColor={handleColorPicker} color={color} />
       </div>
     </div>
   )

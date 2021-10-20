@@ -2,21 +2,55 @@
 }
 
 .main-input input {
-  border: 2px solid blue;
+  border: 1px solid var(--clr-gray-3-text);
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 1.5em;
+
+  padding: 0.75em 1.5em;
+}
+.main-input input:hover {
+  border: 1px solid var(--clr-gray-1-text);
+}
+.main-input input:focus {
+  border: 1px solid var(--clr-blue);
+}
+
+.main-input input::placeholder {
+  color: var(--clr-gray-3-text);
 }
 
 .main-input.error input {
-  border: 2px solid red;
+  border: 1px solid var(--clr-red);
 }
 
-.main-input.error label {
-  color: red;
+.main-input input:disabled {
+  background-color: var(--clr-soft-grey) !important;
+  border: 1px solid var(--clr-greyed-out-text);
+  cursor: not-allowed;
+}
+
+.main-input__label,
+.additional-text {
+  display: block;
+
+  text-align: left;
+  font-size: var(--fs-12);
+  margin-left: 25px;
+}
+
+.additional-text {
+  position: absolute;
+}
+
+.main-input.error .main-input__label {
+  color: var(--clr-red);
+}
+
+.main-input:focus-within .main-input__label {
+  color: var(--clr-blue);
 }
 
 .main-input.error .additional-text {
-  color: red;
-}
-
-.main-input label {
-  display: block;
+  color: var(--clr-red);
 }
