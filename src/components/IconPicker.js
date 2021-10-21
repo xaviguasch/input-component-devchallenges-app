@@ -12,7 +12,7 @@ const IconPicker = (props) => {
 
   return (
     <div className='icon-picker-container'>
-      <div className='row'>
+      <div className='col'>
         <p className='item-label'>Icon Left</p>
         <IconButton pickIcon={iPCHandlerLeft} icon='home' />
         <IconButton pickIcon={iPCHandlerLeft} icon='account_circle' />
@@ -21,12 +21,12 @@ const IconPicker = (props) => {
         <IconButton pickIcon={iPCHandlerLeft} icon='block' color='red' />
       </div>
 
-      <div className='row'>
+      <div className='col'>
         <p className='item-label'>Icon Right</p>
-        <IconButton pickIcon={iPCHandlerRight} icon='home' />
-        <IconButton pickIcon={iPCHandlerRight} icon='account_circle' />
-        <IconButton pickIcon={iPCHandlerRight} icon='thumb_up' />
-        <IconButton pickIcon={iPCHandlerRight} icon='star' />
+        <IconButton pickIcon={iPCHandlerRight} icon='done' />
+        <IconButton pickIcon={iPCHandlerRight} icon='favorite' />
+        <IconButton pickIcon={iPCHandlerRight} icon='code' />
+        <IconButton pickIcon={iPCHandlerRight} icon='pending' />
         <IconButton pickIcon={iPCHandlerRight} icon='block' color='red' />
       </div>
     </div>

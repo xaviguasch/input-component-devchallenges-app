@@ -1,0 +1,9 @@
+.color-picker-input {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.color-picker-input input {
+  cursor: pointer;
+}

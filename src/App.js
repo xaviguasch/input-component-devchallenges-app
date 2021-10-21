@@ -90,7 +90,11 @@ function App() {
 
         <IconPicker getIconLeft={addIconLeft} getIconRight={addIconRight} />
 
-        <ColorPickerInput getColor={handleColorPicker} color={color} />
+        <ColorPickerInput
+          label='color-picker'
+          getColor={handleColorPicker}
+          color={color}
+        />
       </div>
     </div>
   )
